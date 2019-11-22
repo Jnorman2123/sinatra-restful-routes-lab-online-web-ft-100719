@@ -7,7 +7,7 @@ class ApplicationController < Sinatra::Base
   # code actions here!
   get '/recipes' do
     @recipes = Recipe.all
-    binding.pry
+
     erb :index
   end
 
@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
 
   get '/recipes/:id' do
     @recipe = Recipe.find_by_id(params[:id])
-
+    binding.pry
     erb :show
   end
 end
